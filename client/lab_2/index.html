@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
-    <div>
+    <div class="wrapper">
         <!--- wrapper--->
-      <header><h1>Xiyi's Labs For INST377</h1></header>
-      <div>
+      <header class="header"><h1>Xiyi's Labs For INST377</h1></header>
+      <div class="container">
         <!--- container-->
-        <div>
+        <div class="left_section box">
         <!--- left inputs--->
           <h2>Album Names</h2>
-          <ol>
+          <ol class="box">
             <li>Newjeans - Newjeans</li>
             <li>SOS - Sza</li>
             <li>Face the Sun - Seventeen</li>
@@ -23,15 +23,15 @@
             <li>Blue Moon - THEY.</li>
           </ol>
         </div>
-        <div><!--- right inputs--->
+        <div class="right_section box"><!--- right inputs--->
           <h2>Image Carousel</h2>
-          <div>
-            <img src="images/mochi.gif"/>
-            <img src="images/mochi.jpg"/>
-            <img src="images/mochi.png"/>
-            <img src="images/mochi.svg"/>
+          <div class="grid">
+            <img src="images/mochi.gif" alt="Dancing mochi"/>
+            <img src="images/mochi.jpg" alt="Mochi in a Bubble"/>
+            <img src="images/mochi.png" alt="Mochi smilling"/>
+            <img src="images/mochi.svg" alt="Mochi turning straight"/>
           </div>
-          <div>
+          <div class="box">
             <!--- description box--->
               Above displays a series of four images displaying mochis having
               fun.
@@ -40,24 +40,15 @@
       </div>
     </div>
     <div>
-      <footer>
+      <footer class="footer">
+        Github name: xiyiy 
         <a
           href="http://github.com/xiyiy"
           target="_blank"
           rel="noopener noreferrer">
-          Xiyi's Github Account
+          Github Account
         </a>
       </footer>
     </div>
   </body>
 </html>
-
-
-Hook it up to CSS by including style.css in the <head> tag
-
-Then add CSS class names to your HTML to make it look like the lab pictures.
-For example: <div class="selector">
-
-You should not need to edit the CSS to do this, only the HTML.
-
-Don't forget to add an actual set of image descriptions to your image carousel.

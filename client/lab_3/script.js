@@ -6,6 +6,7 @@
   Please feel free to edit away - the main version of this with all the notes is safely stored elsewhere
 */
 /* eslint-enable max-len */
+
 // set our first slide's position to "0", the opening position in an array
 let slidePosition = 0;
 
@@ -21,13 +22,19 @@ const totalSlides = slidesArray.length;
 function updateSlidePosition() {
   slidesArray.forEach((slide) => {
     slide.classList.remove("visible");
-    slide.classList.add("remove");
+    slide.classList.add("hidden");
   });
 
+  console.log(slidePosition);
   slides[slidePosition].classList.add("visible");
 }
 
 function moveToNextSlide() {
+  if (slidePosition === totalSlides - 1){
+    slidePosition = 0;
+  } else {
+    slidePosition += 1;
+  }
   /*
     add an if statement here that checks
     if you're already at the max number of slides
@@ -37,6 +44,11 @@ function moveToNextSlide() {
   updateSlidePosition(); // this is how you call a function within a function
 }
 function moveToPrevSlide() {
+  if (slidePosition === 0) {
+    slidePosition = totalSlides - 1
+  } else {
+    slidePosition -= 1
+  }
   // add your code in here for when you click the "prev" button
   /*
     add an if statement here that checks
@@ -57,5 +69,8 @@ document.querySelector('.next') // Get the appropriate element (<button class="n
     moveToNextSlide(); // call the function above to handle this
   });
 
-// Paying close attention to the above queryselector, write one that fires
-// when you want a "prev" slide
+document.querySelector('.prev') // Get the appropriate element (<button class="next">)
+  .addEventListener('click', () => { // set an event listener on it - when it's clicked, do this callback function
+    console.log('clicked prev'); // let's tell the client console we made it to this point in the script
+    moveToPrevSlide(); // call the function above to handle this
+  });

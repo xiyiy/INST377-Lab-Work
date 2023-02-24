@@ -33,7 +33,6 @@ body {
   background-color: #e9edc9;
 }
 
-
 a {
   display: inline-block;
   text-decoration: none;
@@ -43,6 +42,7 @@ h2, h3 {
   margin:0;
   padding:0;
   padding-bottom:1.5rem;
+  align-items: center;
 }
 
 form {
@@ -55,7 +55,6 @@ form {
   - like this: <div class="wrapper">
   - note that the period vanishes there!
 */
-
 
 .wrapper {
   min-height: 100vh;
@@ -72,14 +71,6 @@ form {
   align-items: start;
   flex:1;
 }
-
-.header {
-  padding-top: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-bottom: 1.5rem;
-}
-
 
 /*
   This rule implies that the H1 tag lives within another HTML tag
@@ -161,6 +152,8 @@ form {
 
   border: 2px dashed;
   border-radius: 4px;
+  position: sticky;
+  bottom: 0;
 }
 
 .footer a {
@@ -265,12 +258,14 @@ div.carousel {
 .prev:focus,
 .next:focus {
   margin: 0;
-  /* Pick a good border colour and check out how it works with your buttons */
+  border: 2px solid #d4a373;
+  background-color: #ccd5ae;
 }
 
 .prev:hover,
 .next:hover {
-  /* Pick a good background colour for your hover pseudoclass */
+  border: 2px solid #d4a373;
+  background-color: #ccd5ae;
 }
 
 /*
@@ -308,9 +303,20 @@ form label {
   /* check it out by using your developer tools to shrink your screen-size */
   .container {
     background-color: #e9edc9;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
+    flex-direction: column; 
+  }
+
+  .right_section {
+    flex: 1 1 auto;
+    justify-content: flex-start;
+  }
+
+  .box {
+    width: 100%;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
+    align-items: flex-start;  
   }
 }
 

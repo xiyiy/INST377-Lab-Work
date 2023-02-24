@@ -13,21 +13,17 @@
         </header>
         <div class="container">
             <!--- left inputs--->
-            <div class="box">
-                <h3>Form Inputs</h3>
-                <div class="left_section box">
-                    Restaurant Name
-                    <form action="/api">
-                        <label for="resto"></label>
-                        <input type="text" name="resto" id="resto"/>
+            <div class="left_section box">
+                <h2>Form Inputs</h2>
+                    <form class="box" action="https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json">
+                        <label for="resto">Restaurant Name </label>
+                        <input type="text" id="resto"/>
                         <button type="submit">Submit</button>
                     </form>
-                </div>
-                
             </div>
             <!--- Right inputs--->
             <div class="right_section box">
-                <h3>Local Restaurants</h3>
+                <h2>Local Restaurants</h2>
                 <div class="restaurant_list box">
                     A list of local restaurants from an API
                 </div>

@@ -90,7 +90,7 @@ form {
   border-radius: 6px;
   font-size: 1.5rem;
   padding: 1.25rem;
-  margin:0; /* removing the margin on h1 tags means the header pins to the top if we move */
+  margin: 0; /* margin = 0, the header pins to the top if we move */
 
 
   /* box-shadows are fancy */
@@ -152,6 +152,7 @@ form {
 
   border: 2px dashed;
   border-radius: 4px;
+
   position: sticky;
   bottom: 0;
 }

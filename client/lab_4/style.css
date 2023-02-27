@@ -305,11 +305,17 @@ form label {
   .container {
     background-color: #e9edc9;
     flex-direction: column; 
+    justify-content: center;
+    align-items: center;
   }
 
   .right_section {
     flex: 1 1 auto;
     justify-content: flex-start;
+  }
+
+  .left_section {
+    flex: 1 1 auto;
   }
 
   .box {

@@ -296,6 +296,10 @@
     display: block; /* this turns the label text into a box we can set margins on */
     margin-bottom: 0.5rem;
   }
+
+  map { /*add map*/
+    display: none;
+  }
   
   /* How To Write A Media Query For Small Screens */
   

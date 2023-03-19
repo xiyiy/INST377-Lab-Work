@@ -334,7 +334,7 @@ map { /*add map*/
 /* 
     New code bonus: pure CSS data loading icon
     This comes from loading.io/css - it's nice to show that something is happening!
-
+*/
 
 .lds-ellipsis {
     display: inline-block;
@@ -391,5 +391,4 @@ map { /*add map*/
       transform: translate(24px, 0);
     }
   }
-  */
   

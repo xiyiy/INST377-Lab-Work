@@ -18,11 +18,13 @@
           <form action="https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json"
             class="box main_form">
             <button type="button" id="data_load">Load County Data</button>
-              <label for="resto">Restaurant Name </label>
-              <input type="text" id="resto" name="resto"/>
             <div>
-            <button type="button" id="filter">Filter Data</button>
-            <button type="button" id="generate">Generate List</button>
+                <label for="resto">Restaurant Name </label>
+                <input type="text" id="resto" name="resto"/>
+            </div>  
+            <div>
+                <button type="button" id="filter">Filter Data</button>
+                <button type="button" id="generate">Generate List</button>
             </div>
           </form>
         </div>
@@ -43,13 +45,3 @@
     <script src="./script.js"></script>
   </body>
 </html>
-
-<!--
-    This is how to build the CSS-only load animation from loading.io    
-    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-
-    This is helpful for showing your client-side users when data is loading,
-    since there's otherwise no sign your app is thinking about something!
-
-    Try placing it at the same level in your element tree as your Submit button
--->

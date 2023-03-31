@@ -49,9 +49,8 @@ async function mainEvent() {
 
   const loadAnimation = document.querySelector("#data_load_animation");
   loadAnimation.style.display = "none";
-  generateListButton.classList.add("hidden");
 
-  let storedList = [];
+  let storedList = []; 
   let currentList = [];
 
   loadDataButton.addEventListener("click", async (submitEvent) => {
@@ -70,12 +69,12 @@ async function mainEvent() {
       generateListButton.classList.remove("hidden");
     }
 
-    loadAnimation.style.display = "none";
+    //loadAnimation.style.display = "none";
     console.table(storedList); // this is called "dot notation"
   });
 
   filterButton.addEventListener("click", (event) => {
-    console.log("clicked FilterButton");
+    console.log("clicked filterButton");
 
     const formData = new FormData(form);
     const formProps = Object.fromEntries(formData);
@@ -85,21 +84,21 @@ async function mainEvent() {
 
     console.log(newList);
     injectHTML(newList);
-  });
+  })
 
   generateListButton.addEventListener("click", (event) => {
     console.log("generate new list");
-    const currentList = cutRestaurantList(storedList);
+    currentList = cutRestaurantList(storedList);
     console.log(currentList);
     injectHTML(currentList);
-  });
+  })
 
   textField.addEventListener("input", (event) => {
     console.log("input", event.target.value);
-    const newList = filterList(currentlist, event.target.value);
+    const newList = filterList(currentList, event.target.value);
     console.log(newList);
     injectHTML(newList);
-  });
+  })
 }
 //add event listener
 document.addEventListener("DOMContentLoaded", async () => mainEvent()); // the async keyword means we can make API requests

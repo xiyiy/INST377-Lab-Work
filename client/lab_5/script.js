@@ -10,7 +10,6 @@ function filterList(list, query){ //query is a value user input
   }) 
 }
 
-
 async function mainEvent() { // the async keyword means we can make API requests
   const form = document.querySelector('.main_form'); // This class name needs to be set on your form before you can listen for an event on it
   const filterButton = document.querySelector('.filter_button');
@@ -21,48 +20,12 @@ async function mainEvent() { // the async keyword means we can make API requests
     submitEvent.preventDefault(); // This prevents your page from going to http://localhost:3000/api even if your form still has an action set on it
     console.log('form submission'); // this is substituting for a "breakpoint"
 
-    /*
-      ## GET requests and Javascript
-        We would like to send our GET request so we can control what we do with the results
-        But this blocks us sending a query string by default - ?resto='' won't exist
-
-        Let's get those form results before sending off our GET request using the Fetch API
-    */
-
-    // this is the preferred way to handle form data in JS in 2022
     const formData = new FormData(submitEvent.target); // get the data from the listener target
     const formProps = Object.fromEntries(formData); // Turn it into an object
-
-    // You can also access all forms in a document by using the document.forms collection
-    // But this will retrieve ALL forms, not just the one that "heard" a submit event - less good
-
-    /*
-      ## Retrieving information from an API
-        The Fetch API is relatively new,
-        and is much more convenient than previous data handling methods.
-        Here we make a basic GET request to the server using the Fetch method
-        to send a request to the routes defined in /server/routes/foodServiceRoutes.js
-
-      // this is a basic GET request
-      // It does not include any of your form values, though
-    */
     
     //get request to control results
     const results = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
-    /*
-   ## Get request with query parameters
-
-      ---const results = await fetch(`/api/foodServicePG?${new URLSearchParams(formProps)}`);
-
-      The above request uses "string interpolation" to include an encoded version of your form values
-      It works because it has a ? in the string
-      Replace line 37 with it, and try it with a / instead to see what your server console says
-
-      You can check what you sent to your server in your GET request
-      By opening the "network" tab in your browser developer tools and looking at the "name" column
-      This will also show you how long it takes a request to resolve
-    */
-
+  
     // This changes the response from the GET into data we can use - an "object"
     currentList = await results.json();
     console.table(currentList); // this is called "dot notation"

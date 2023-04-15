@@ -84,21 +84,21 @@ async function mainEvent() {
 
     console.log(newList);
     injectHTML(newList);
-  })
+  });
 
   generateListButton.addEventListener("click", (event) => {
     console.log("generate new list");
     currentList = cutRestaurantList(storedList);
     console.log(currentList);
     injectHTML(currentList);
-  })
+  });
 
   textField.addEventListener("input", (event) => {
     console.log("input", event.target.value);
     const newList = filterList(currentList, event.target.value);
     console.log(newList);
     injectHTML(newList);
-  })
+  });
 }
 //add event listener
 document.addEventListener("DOMContentLoaded", async () => mainEvent()); // the async keyword means we can make API requests

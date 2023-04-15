@@ -256,8 +256,10 @@ form label {
     margin-bottom: 0.5rem;
 }
   
-map { /*add map*/
-    display: none;
+#map {
+    width: 400px;
+    height: 380px;
+    margin-bottom: 1em;
 }
   
   /* How To Write A Media Query For Small Screens */
